@@ -38,8 +38,9 @@ function Get-StatsOverIt {
     }
 
     $RegKey = Get-Item $KeyPath
-
-    $NumPlaythrus = Get-GoIRegistyValue -RegistryKey $RegKey -ValueName 'NumWins_h3927849616'
+    
+    # Off-by-one when compared to Game Stats
+    $NumPlaythrus = (Get-GoIRegistyValue -RegistryKey $RegKey -ValueName 'NumWins_h3927849616') - 1
 
     $BestTimeBytes = Get-GoIRegistyValue -RegistryKey $RegKey -ValueName 'BestTime_h2296154256'
     $BestTime = [timespan]::FromSeconds(
