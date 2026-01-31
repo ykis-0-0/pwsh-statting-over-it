@@ -1,5 +1,5 @@
 @{
-    # RootModule = 'GoiStats.psm1'
+    RootModule = 'StattingOverIt.psm1'
     ModuleVersion = '0.0.1.1'
     # CompatiblePSEditions = @()
 
